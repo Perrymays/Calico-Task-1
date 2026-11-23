@@ -1,5 +1,21 @@
 /* Calico Media marketing site */
 
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ink: #1f1a17;
   --ink-soft: #5b524c;
@@ -197,7 +213,7 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .site-header--home nav {
@@ -205,17 +221,17 @@ img {
 }
 
 .site-header--home .nav-links {
-  flex-wrap: wrap;
-  gap: 8px 4px;
+  flex-wrap: nowrap;
+  gap: 0;
 }
 
 .site-header--home .nav-links li {
-  min-width: auto;
+  min-width: 0;
 }
 
 .site-header--home .nav-links a {
   display: block;
-  padding: 6px 12px;
+  padding: 0 14px;
   white-space: nowrap;
 }
 
@@ -244,7 +260,6 @@ img {
 
 .hero-text {
   flex: 1;
-  min-width: 0;
 }
 
 .hero-text .lead {
@@ -408,7 +423,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
 }
 
@@ -748,27 +763,6 @@ img {
   padding-top: 24px;
 }
 
-@media (max-width: 980px) {
-  .hero-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 32px;
-  }
-
-  .hero-media {
-    order: -1;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    flex-shrink: 1;
-  }
-
-  .feature-row,
-  .contact-layout {
-    gap: 40px;
-  }
-}
-
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -782,14 +776,6 @@ img {
     padding: 64px 0;
   }
 
-  .page-header {
-    padding: 56px 0 40px;
-  }
-
-  .site-footer {
-    margin-top: 64px;
-  }
-
   .feature-row {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -800,7 +786,6 @@ img {
     order: 0;
   }
 
-  .playbook-grid,
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -820,13 +805,8 @@ img {
     font-size: 34px;
   }
 
-  .playbook-grid,
   .card-grid {
     grid-template-columns: 1fr;
-  }
-
-  .cta-band img {
-    aspect-ratio: 16 / 10;
   }
 
   .cta-body {
