@@ -46,6 +46,15 @@
           <label for="message">How can we help?</label>
           <textarea id="message" name="message" required></textarea>
 
+          <!-- Check 1: Honeypot (hidden from humans and screen readers, visible to bots) -->
+          <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Check 2: Form load timestamp -->
+          <input type="hidden" id="form_loaded_at" name="form_loaded_at" value="">
+
           <button class="btn" type="submit">Send message</button>
           <p class="form-status" id="form-status" role="status"></p>
         </form>
